@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             btnSelect.text = "o"
             btnSelect.setBackgroundResource(R.color.colorPlayer2)
-            playerOne.add(position)
+            playerTwo.add(position)
             currentPlayer = 1
         }
         btnSelect.isClickable = false
@@ -76,9 +76,15 @@ class MainActivity : AppCompatActivity() {
             winner = 2;
         }
 
-        when(winner){
-            1 -> Toast.makeText(this, "Parabéns! jogador 1 venceu", Toast.LENGTH_LONG).show()
-            2 -> Toast.makeText(this, "Parabéns! jogador 2 venceu", Toast.LENGTH_LONG).show()
+        when (winner) {
+            1 -> Toast.makeText(this, "Parabéns! jogador 1 venceu", Toast.LENGTH_SHORT).show()
+            2 -> Toast.makeText(this, "Parabéns! jogador 2 venceu", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun restart(view: View) {
+        playerOne.clear()
+        playerTwo.clear()
+        setContentView(R.layout.activity_main)
     }
 }
